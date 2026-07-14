@@ -16,7 +16,7 @@ An <b>enterprise-grade, containerized Data Engineering Sandbox</b> that enables 
 
 <p>
 
-🎥 **Demo:** *Replace the placeholder below with your project GIF or screen recording.*
+🎥 **Demo:**
 
 ```text
 assets/demo.mp4
