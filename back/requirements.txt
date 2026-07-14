@@ -1,0 +1,20 @@
+# --- Web Server & API ---
+fastapi
+uvicorn
+python-multipart
+
+# --- Environment & API Calls (Groq LLM) ---
+python-dotenv
+httpx
+
+# --- Background Worker & Queue ---
+redis
+rq
+
+# --- Data Science & Manipulation ---
+pandas
+openpyxl
+
+# --- Data Visualization ---
+matplotlib
+plotly

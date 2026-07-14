@@ -1,0 +1,17 @@
+# Environments
+.env
+back/.env
+
+# Node/React
+node_modules/
+dist/
+
+# Python
+__pycache__/
+venv/
+*.pyc
+
+# Local Data (Don't upload test files)
+sessions/
+*.csv
+*.xlsx

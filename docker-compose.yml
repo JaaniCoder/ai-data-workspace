@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  api:
+    build:
+      context: ./back
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    volumes:
+      - shared_sessions:/app/sessions
+    env_file:
+      - ./back/.env
+    depends_on:
+      - redis
+
+  worker:
+    build:
+      context: ./back
+      dockerfile: Dockerfile.worker
+    environment:
+      - REDIS_HOST=redis
+    env_file:
+      - ./back/.env
+    volumes:
+      - shared_sessions:/app/sessions
+    depends_on:
+      - redis
+      - api
+
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+
+volumes:
+  shared_sessions:
